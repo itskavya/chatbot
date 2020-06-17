@@ -1,0 +1,130 @@
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- book_room
+- clean_room
+- num_of_room
+- kind_of_room
+- clean_when
+- checkin
+- cancel_booking
+- cancellation_policy
+- breakfast
+- breakfast_timings
+- restaurant_timings
+- restaurant
+- checkout
+- boring
+  
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- utter_how_many
+- utter_what_kind
+- utter_confirm
+- utter_when
+- utter_will_send
+- utter_checkin
+- utter_checkout
+- utter_cancel_booking
+- utter_cancel_policy
+- utter_restaurant_details
+- utter_breakfast_details
+- utter_breakfast_timings
+- utter_restaurant_timings
+- utter_anything_else
+- utter_repeat
+
+entities:
+- num_room
+- kind
+- time
+
+slots:
+ num_room:
+  type: text
+ kind:
+  type: text
+ time:
+  type: unfeaturized
+
+
+templates:
+  utter_greet:
+  - text: "Hey! How are you? I am your ROOMASSISTANT.Welcome to our Hotel.\n Here's what I can assist you with.\nBOOKING \nCLEANING \nDO LET ME KNOW IF YOU HAVE ANY OTHER QUESTIONS "
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+  
+  utter_anything_else:
+  - text: "Is there anything else that I can help you with?"
+  
+  utter_repeat:
+  - text: "Here's what I can assist you with.\nBOOKING \nCLEANING \nDO LET ME KNOW IF YOU HAVE ANY OTHER QUESTIONS"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  
+  utter_how_many:
+  - text: "How many rooms do you like to book.Enter in words.Remember You can book only 3 rooms at a time"
+  
+  utter_what_kind:
+  - text: "what kind of room do you want?\nSimple or Deluxe"
+  
+  utter_confirm:
+  - text: "Do you want to confirm booking for {num_room} {kind} room?"
+  
+  utter_when:
+  - text: "When should I arrange for cleaning"
+  
+  utter_will_send:
+  - text: "sure i wil send someone right {time}"
+  
+  utter_checkin:
+  - text: "Check-in time starts at 4 PM. The minimum check-in age is 21. Please contact the reception for early check-in requests."
+  
+  utter_checkout:
+  - text: "Check-out time is 11 AM. Please contact the reception for late checkout requests."
+  
+  utter_cancel_booking:
+  - text: "To cancel a reservation, select the “Reservations” link from the homepage.\nOn the Reservations page, under the heading ‘View, Change or Cancel a Reservation,’ enter your confirmation number, and either the last name on the reservation or the last four digits of the credit card used to make the reservation."
+  
+  utter_cancel_policy:
+  - text: "The booking deposit is refundable if the cancellation occurs at least 15 days before arrival. For cancellations made after this limit, a penalty will be imposed based on the cancellation policy."
+  
+  utter_restaurant_details:
+  - text: "Yes, the hotel has a restaurant called the Zephyr Bar. With our menu, we strive to reflect the historic art and the spirit of our neighborhood by offering a glimpse into what makes our area unique."
+  
+  utter_breakfast_details:
+  - text: "The hotel provides its guests with a free made-to-order breakfast each morning."
+  
+  utter_breakfast_timings:
+  - text: "Monday through Friday breakfast is 6 am to 9 am. On Saturday and Sunday, we are open from 7 am to 10:30 am."
+  
+  utter_restaurant_timings:
+  - text: "Our restaurant serves a dazzling 24-hour menu."
+   
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
